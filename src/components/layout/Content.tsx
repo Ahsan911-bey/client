@@ -25,7 +25,7 @@ const Content =() =>{
             <button onClick={getPassword} className="transition ease-in-out bg-green-600 hover:-translate-y-2 delay-100 hover:bg-green-500 duration-500 rounded-md py-2 px-9 mt-4">Generate</button>
             <div>   
                     <input placeholder="  password" value={password} className="text-black rounded-l-md mt-3 w-72 h-8"></input>
-                    <button onClick={copyToClipboard} className="bg-green-600 h-8 rounded-r-md">Copy</button>
+                    <button onClick={copyToClipboard} className="rounded-r-md transition ease-in-out bg-green-600 h-8 hover:scale-125 delay-150  ">Copy</button>
             </div>
         </div>
       </div>  
