@@ -1,7 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import  Header  from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import CurrConverter from "@/components/layout/CurrConverter";
+import PassGen from "./PassGen";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +19,7 @@ export default function Home() {
       <div className="min-h-screen flex flex-col">
             <Header />
                 <main className="flex-grow">
-                        <CurrConverter />
+                        <PassGen />
                 </main>
             <Footer />
       </div>

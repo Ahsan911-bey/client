@@ -5,7 +5,7 @@ import { faReact } from "@fortawesome/free-brands-svg-icons";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 
 
-const Content =() =>{
+const PassGen =() =>{
     const [password,setPassword]=useState("");
     const [numbersAllowed,setnumbersAllowed]=useState(false);
     const length=8;
@@ -46,4 +46,4 @@ const Content =() =>{
       </div>  
     );
 };
-export default Content;
+export default PassGen;
