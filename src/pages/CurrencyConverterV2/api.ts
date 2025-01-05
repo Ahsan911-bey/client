@@ -17,7 +17,7 @@ export const convertCurrency= async(
     fromCurrency: string,
     toCurrency: string,
     amount: number
-): Promise<number> => {
+)=> {
     try{
         const Response= await axios.get(
             `${API_BASE_URL}/pair/${fromCurrency}/${toCurrency}/${amount}`
