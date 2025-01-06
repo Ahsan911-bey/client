@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiAlignJustify } from "react-icons/fi";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-
-
-
-
 const NavBar=() =>{
+    const [selectedLanguage, setSelectedLanguage] = useState<'ENG' | 'JAP'>('ENG');
+
+    const LangBtnHandler = (language: 'ENG' | 'JAP') => {
+        setSelectedLanguage(language);
+    };
+
     return(
     <div className="h-16 bg-zinc-900 flex items-center">
         <div className="pt-4 pl-4 pb-4">
@@ -27,8 +29,22 @@ const NavBar=() =>{
             ></input>
         </div>
         <div className="pl-72 flex">
-            <button className="transition-all w-7 h-6 font-mono bg-blue-700  rounded-tl-md rounded-bl-md hover:bg-blue-900">EN</button>
-            <button className="transition-all w-7 h-6 ml-px font-mono bg-lime-800 rounded-tr-md rounded-br-md hover:bg-lime-600">JP</button>
+            <button 
+            onClick={() => LangBtnHandler('ENG')}
+            className={`w-7 h-6 font-mono rounded-l-md ${
+             selectedLanguage === 'ENG' ? 'bg-gray-400' : 'bg-slate-800'
+            }`}
+            >
+            EN</button>
+            <button 
+            onClick={() => LangBtnHandler('JAP')}
+            className={`w-7 h-6 ml-px font-mono rounded-r-md ${
+                selectedLanguage === 'JAP' ? 'bg-gray-400' : 'bg-slate-800'
+            }`}
+            
+            
+            >
+            JAP</button>
         </div>
         <div className="ml-80 ">
             <button
@@ -40,3 +56,5 @@ const NavBar=() =>{
     )
 }
 export default NavBar;
+
+
