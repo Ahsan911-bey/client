@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { FiAlignJustify } from "react-icons/fi";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Logo from "./Logo.png";
+import Image from 'next/image';
 
 const NavBar=() =>{
     const [selectedLanguage, setSelectedLanguage] = useState<'ENG' | 'JAP'>('ENG');
@@ -10,48 +12,50 @@ const NavBar=() =>{
     };
 
     return(
-    <div className="h-16 bg-zinc-900 flex items-center">
-        <div className="pt-4 pl-4 pb-4">
+    <div className="h-16 bg-[#1c1c1c] flex items-center justify-between px-4 md:px-8">
+        <div className="flex items-center space-x-4">
         <FiAlignJustify size={32} />
         </div>
         <div className="h-10 pl-12">
-            <img
-            src="https://marketplace.canva.com/EAGALYqSH7g/1/0/1600w/canva-red-and-black-illustrative-wolf-gaming-logo-cSzFMRU1Vrg.jpg"
+            <Image
+            src={Logo}
             alt="Logo"
-            className="h-12  object-cover"
-            ></img>
+            className="h-10 rounded-xl object-contain"
+             />
         </div>
-        <div className="pl-24 w-2/6">
+        <div className="pl-16 w-11/12 flex flex-grow">
             <input
             type="text"
             placeholder="  Search anime..."
-            className="bg-slate-950 min-w-full rounded-md h-8"
+            className="bg-[#141414] w-full rounded-md h-8 "
             ></input>
         </div>
-        <div className="pl-72 flex">
+        <div className="pl-44 flex">
             <button 
             onClick={() => LangBtnHandler('ENG')}
             className={`w-7 h-6 font-mono rounded-l-md ${
-             selectedLanguage === 'ENG' ? 'bg-gray-400' : 'bg-slate-800'
+             selectedLanguage === 'ENG' ? 'bg-gray-400 text-zinc-800' : 'bg-zinc-800 text-gray-500'
             }`}
             >
             EN</button>
             <button 
             onClick={() => LangBtnHandler('JAP')}
             className={`w-7 h-6 ml-px font-mono rounded-r-md ${
-                selectedLanguage === 'JAP' ? 'bg-gray-400' : 'bg-slate-800'
+                selectedLanguage === 'JAP' ? 'bg-gray-400 text-zinc-800' : 'bg-zinc-800 text-gray-500'
             }`}
             
             
             >
-            JAP</button>
+            JP</button>
         </div>
-        <div className="ml-80 ">
-            <button
-             className="bg-purple-800 flex flex-nowrap  items-center py-1 px-9 font-normal rounded-md ml-3 transition-all hover:bg-purple-700"
-            >Sign in <FaArrowRightLong />
-            </button>
-        </div>
+        <div className="ml-52">
+    <button
+        className="bg-purple-800 w-auto mr-4 h-auto whitespace-nowrap flex items-center justify-center py-1 px-7 font-normal text-white rounded-md ml-3 transition-all hover:bg-purple-700"
+    >
+        Sign in <FaArrowRightLong className="ml-2" />
+    </button>
+</div>
+
     </div>
     )
 }
