@@ -35,7 +35,7 @@ const HeroSection=() =>{
             style={{ backgroundImage: `url(${images[currentIndex].src})`}}
             >
                <button
-               className="bg-purple-800 mt-72 ml-3 px-10 py-2 rounded-md text-3xl hover:bg-purple-700 transition"
+               className="bg-purple-800 mt-80 ml-3 px-10 py-2 rounded-md text-3xl hover:bg-purple-700 transition"
                >PLAY NOW
                </button>
             </div>
