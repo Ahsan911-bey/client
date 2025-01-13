@@ -1,26 +1,16 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import  Header  from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import CurrConverter from "@/components/layout/CurrConverter";
+import React from "react";
+import NavBar from "./NavBar";
+import HeroSection from "./HeroSection";
+import AnimeGrid from "./AnimeGrid";
+import Footer from "./footer"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export default function Home() {
-    return (
-      <div className="min-h-screen flex flex-col">
-            <Header />
-                <main className="flex-grow">
-                        <CurrConverter />
-                </main>
+export default function Site() {
+    return(
+        <div>
+            <NavBar />
+            <HeroSection />
+            <AnimeGrid />
             <Footer />
-      </div>
-    );
-  }
+        </div>
+    )
+}
