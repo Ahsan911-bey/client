@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FiAlignJustify } from "react-icons/fi";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { IoMdSearch } from "react-icons/io";
 import Logo from "./Logo.png";
 import Image from 'next/image';
 
@@ -23,12 +24,13 @@ const NavBar = () => {
                     className="h-10 rounded-xl object-contain"
                 />
             </div>
-            <div className="pl-16 w-11/12 flex flex-grow">
+            <div className=" relative pl-1 sm:pl-16 w-11/12 flex flex-grow">
                 <input
                     type="text"
-                    placeholder="  Search anime..."
-                    className="bg-[#141414] w-full rounded-md h-8 md:w-1/2"
-                ></input>
+                    placeholder="  Search..."
+                    className="bg-[#141414] pl-5 w-full rounded-md h-8 md:w-1/2"
+                 />
+                <button className="absolute top-1 "><IoMdSearch size={24} /></button>
             </div>
             <div className="pl-44 flex hidden md:flex">
                 <button

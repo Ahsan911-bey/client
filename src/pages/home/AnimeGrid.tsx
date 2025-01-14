@@ -14,7 +14,7 @@ const AnimeGrid= () =>{
                         <div className="mt-4">
                             <h2 className="text-md font-bold">{anime.title}</h2>
                         </div>
-                        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-[#242424] text-white text-sm p-4 rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-56 Z-50">
+                        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-[#242424] text-white text-sm p-4 rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-56 Z-50 hidden md:block">
                             <h3 className="font-bold text-lg mb-2 text-purple-800">{anime.title}</h3>
                             <p className="mb-1">Info: {anime.info}</p>
                             <p className="mb-1">Other Names: {anime.OtherNames}</p>
