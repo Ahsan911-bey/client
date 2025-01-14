@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "./NavBar";
-import HeroSection from "./HeroSection";
+import HeroSection from "./HeroSection2";
 import AnimeGrid from "./AnimeGrid";
 import Footer from "./footer"
 
