@@ -3,7 +3,7 @@ import AnimeList from "./AnimeList";
 const AnimeGrid= () =>{
     return(
         <div className="p-8">
-            <div className="relative grid grid-cols-1 sm:grid-cols-2 md:gird-cols-3 lg:grid-cols-6 gap-6">
+            <div className="relative grid grid-cols-2 sm:grid-cols-2 md:gird-cols-3 lg:grid-cols-6 gap-6">
                 {AnimeList.map((anime,Index) =>(
                     <div key={Index} className="p-4 rounded-md shadow-2xl hover:-translate-y-2 duration-100 transition-all group relative">
                         <img
