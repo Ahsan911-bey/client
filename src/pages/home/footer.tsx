@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import FooterImg2 from './FooterImg2.jpg';
+import FooterImg3 from './FooterImg3.jpg';
 import Logo from './Logo.png';
 
 const Footer = () => {
@@ -9,13 +9,13 @@ const Footer = () => {
             <div className="relative">
                 <div className='hidden md:block'>
                 <Image
-                    src={FooterImg2}
+                    src={FooterImg3}
                     alt="FooterImg"
                     objectFit="cover"
                     layout="responsive"
                 />
                 </div>
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 min-h-[15rem] md:min-h-[30rem]">
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 min-h-[15rem] md:min-h-[20rem]">
                     <div className="hidden md:block">
                         <h2 className="text-3xl font-bold">A-Z List</h2>
                         <p className="text-lg mt-2">
