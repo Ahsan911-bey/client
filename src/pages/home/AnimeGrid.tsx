@@ -1,34 +1,72 @@
-import React from "react";
-import AnimeList from "./AnimeList";
-const AnimeGrid= () =>{
-    return(
-        <div className="p-8">
-            <div className="relative grid grid-cols-2 sm:grid-cols-2 md:gird-cols-3 lg:grid-cols-6 md:gap-5">
-                {AnimeList.map((anime,Index) =>(
-                    <div key={Index} className="p-2 rounded-md shadow-2xl hover:-translate-y-2 duration-100 transition-all group abolute">
-                        <div className="z-0">
-                        <img
-                            src={anime.src}
-                            alt={anime.title}
-                            className="w-auto h-80 object-cover rounded-md"
-                        />
-                        </div>
-                        <div className="mt-4">
-                            <h2 className="text-md font-bold">{anime.title}</h2>
-                        </div>
-                        <div className="absolute bottom-10 left-60 transform translate-y-9 bg-[#242424] text-white text-sm p-4 rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-56 z-50 hidden lg:block">
-                            <h3 className="font-bold text-lg mb-2 text-purple-800">{anime.title}</h3>
-                            <p className="mb-1">Info: {anime.info}</p>
-                            <p className="mb-1">Other Names: {anime.OtherNames}</p>
-                            <p className="mb-1">Type: {anime.Type}</p>
-                            <p className="mb-1">Date Aired: {anime.DateAired}</p>
-                            <p className="mb-1">Year: {anime.Year}</p>
-                            <p className="mb-1">Status: {anime.Status}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-    )
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+interface Anime {
+    id: string;
+    title: string;
+    image: string;
+    duration: string;
+    jname: string;
+    type: string;
+    nsfw: boolean;
+    sub: number;
+    dub: number;
+    episodes: number;
 }
+
+const AnimeGrid: React.FC = () => {
+    const [animeList, setAnimeList] = useState<Anime[]>([]);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchAnimeList = async () => {
+            try {
+                const response = await axios.get("http://127.0.0.1:3001/api/latest-completed");
+                const data = response.data;
+
+                const formattedData = data.map((anime: any) => ({
+                    id: anime.id,
+                    title: anime.title,
+                    image: anime.image,
+                    duration: anime.duration,
+                    jname: anime.jname,
+                    type: anime.type,
+                    nsfw: anime.nsfw,
+                    sub: anime.sub,
+                    dub: anime.dub,
+                    episodes: anime.episodes,
+                }));
+                setAnimeList(formattedData);
+            } catch (error) {
+                console.error("Error fetching anime list:", error);
+                setError("Failed to fetch anime list. Please try again later.");
+            }
+        };
+
+        fetchAnimeList();
+    }, []);
+
+    if (error) {
+        return <div>{error}</div>;
+    }
+
+    return (
+        <div className="grid grid-cols-3 gap-4">
+            {animeList.map((anime) => (
+                <div key={anime.id} className="anime-card">
+                    <img src={anime.image} alt={anime.title} className="anime-image" />
+                    <h3>{anime.title}</h3>
+                    <p>Japanese Name: {anime.jname}</p>
+                    <p>Type: {anime.type}</p>
+                    <p>Duration: {anime.duration}</p>
+                    <p>Episodes: {anime.episodes}</p>
+                    <p>Subbed Episodes: {anime.sub}</p>
+                    <p>Dubbed Episodes: {anime.dub}</p>
+                    <p>{anime.nsfw ? "NSFW" : "Safe for Work"}</p>
+                </div>
+            ))}
+        </div>
+    );
+};
+
 export default AnimeGrid;
