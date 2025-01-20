@@ -36,7 +36,7 @@ const TopA: React.FC= () =>{
     }, []);
 
     return(
-        <div className='hidden  lg:flex flex-col items-center relative bg-[#1c1c1c] w-1/5 h-1/5 mt-4 rounded-lg'>
+        <div className='hidden  lg:flex flex-col items-center relative bg-[#1c1c1c] w-1/5 2xl:w-1/6 h-1/5 mt-4 rounded-lg'>
         <h3 className='font-bold mt-2 text-2xl text-white'>Top Anime</h3>
         <div>
             {AnimeListT.map((anime) =>(

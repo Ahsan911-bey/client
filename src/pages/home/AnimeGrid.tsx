@@ -55,11 +55,11 @@ const AnimeGrid: React.FC = () =>{
     }
 
     return(
-        <div className='flex '>
-            <div className='grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5'>
+        <div className='flex gap-2 2xl:gap-4'>
+            <div className='grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-3'>
                 {AnimeList.map((anime) =>(
-                    <div key={anime.id} className='group relative mt-4 shadow-inner overflow-hidden transition ease-in-out hover:scale-105 duration-300'>
-                        <img src={anime.image} alt={anime.title} className=' object-cover rounded-lg h-80 w-70' />
+                    <div key={anime.id} className='group relative mt-4 ml-2 shadow-inner overflow-hidden transition ease-in-out hover:scale-105 duration-300'>
+                        <img src={anime.image} alt={anime.title} className=' object-cover rounded-lg h-80 w-60' />
                         <div className='group-hover:opacity-60 absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-55'></div>
                             <div className='absolute bottom-0 left-2 drop-shadow-2xl -translate-y-1 p-2 '>
                                 <p className='text-white font-bold line-clamp-2'>{anime.title}</p>
