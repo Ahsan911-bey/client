@@ -32,7 +32,7 @@ const NavBar = () => {
                  />
                 <button className="absolute top-1 "><IoMdSearch size={24} /></button>
             </div>
-            <div className="pl-44 flex hidden md:flex">
+            <div className="pl-44 hidden md:flex">
                 <button
                     onClick={() => LangBtnHandler('ENG')}
                     className={`w-7 h-6 font-mono rounded-l-md ${
